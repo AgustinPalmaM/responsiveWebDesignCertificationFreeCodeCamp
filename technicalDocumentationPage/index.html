@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+        <nav id="navbar">
+            <p>Introducción a Ruby</p>
+            <header  id="header-navbar">
+                <a class="nav-link" href="#Introduccion">Introduccion</a>
+                <a class="nav-link" href="#primeros_pasos">Primeros pasos</a>
+                <a class="nav-link" href="#Nuestro_primer_programa">Nuestro primer programa</a>
+                <a class="nav-link" href="#tipos_y_operadores">Tipos y operadores</a>
+                <a class="nav-link" href="#Variables">Variables</a>
+                <a class="nav-link" href="#condicionales">Condicionales</a>
+                <a class="nav-link" href="#ciclos">Ciclos</a>
+                <a class="nav-link" href="#arreglos">Arreglos</a>
+                <a class="nav-link" href="#Mas_cadenas_de_texto">Mas cadenas de texto</a>
+                <a class="nav-link" href="#hashes">Hashes</a>
+                <a class="nav-link" href="#metodos">Metodos</a>
+            </header>
+        </nav>
+    
+        <main id="main-doc">
+            <section id="Introduccion" class="main-section">
+                <header>Introduccion</header>
+                    <p>Ruby es un lenguaje muy expresivo, enfocado en la simplicidad y la productividad del programador. Es ideal para principiantes por su sintaxis clara y fácil de entender, pero lo suficiente robusto como para crear aplicaciones que pueden escalar a millones de usuarios.
+                    </p>
+                    <p>Fue creado en 1993 por un Japonés llamado Yukihiro Matsumoto, pero no fue sino desde 2005 que se empezó a popularizar gracias a Ruby on Rails, el framework para crear aplicaciones Web más popular de Ruby.</p>
+            </section>
+    
+            <section id="primeros_pasos" class="main-section">
+                <header>Primeros pasos</header>
+                    <p>Para verificar si tienes Ruby instalado abre una línea de comandos y ejecuta ruby -v. Si ya lo tienes te va a aparecer una línea similar a la siguiente:</p>
+                    <code>
+                        <ol>
+                            <li>$ ruby -v</li>
+                            <li>ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-darwin13]</li>
+                        </ol>
+                    </code>
+                    <p>La versión puede ser diferente, cualquier versión mayor a 2.1.0 está bien.</p>
+                    <p>Si ves un mensaje diciendo que el comando no fue encontrado, significa que aún no tienes Ruby instalado. Puedes encontrar las instrucciones para instalarlo en el siguiente enlace: <a href="https://github.com/makeitrealcamp/ruby-installation">https://github.com/makeitrealcamp/ruby-installation</a></p>
+                    <p>Una vez que tengas instalado <strong>Ruby</strong> y lo hayas verificado, continúa. En las siguientes secciones vamos a ver cómo ejecutar código Ruby en el interpretador y desde un archivo. </p>              
+                    <p>La forma de ejecutar codigo ruby que usaremos es la siguiente:</p>
+                    <p>abrimos el interpretador de Ruby ejecutando el comando IRB.</p>
+                    <code>
+                        <ol>
+                            <li>$ irb</li>
+                            <li>2.3.0 :001 ></li>
+                        </ol>
+                    </code>
+                    <p>El interpretador nos permite escribir cualquier expresión válida de Ruby y oprimir Enter. El interpretador evalúa la expresión y debajo muestra el resultado:</p>
+                    <code>
+                        <ol>
+                            <li>$ irb</li>
+                            <li>2.3.0 :001 > 1 + 2</li> 
+                            <li>=> 3</li> 
+                            <li>2.3.0 :002 ></li> 
+                        </ol>
+                    </code>
+                    <p>Puedes repetir ese mismo proceso las veces que quieras. Esa es una forma muy rápida de probar código. Para salir escribe <code>exit</code> y oprime <code>Enter</code></p>
+                
+            </section>
+    
+            <section id="Nuestro_primer_programa" class="main-section">
+                <header>Nuestro primer programa</header>
+                    <p>La otra forma de ejecutar código Ruby es crear un archivo con extensión rb en el que escribimos nuestro código. Para eso crea una carpeta en tu máquina y úbicate sobre ella en la consola. Ábrela con tu editor preferido.
+                    </p>
+                    <p>Crea un archivo llamado <code>hello_world.rb</code>  (los archivos de Ruby terminan con la extensión rb y se recomienda nombrar el archivo todo en minúscula separando las palabras con raya al piso). En el archivo escribe lo siguiente:</p>
+                    <code>
+                        <ol>
+                            <li>puts "Hola mundo"</li>
+                        </ol>
+                    </code>
+                    <p>Guárdalo. Para ejecutarlo escribe lo siguiente en la consola (asegúrate de estar sobre la carpeta donde está el archivo):</p>
+                    <code>
+                        <ol>
+                            <li>>$ ruby hello_world.rb</li>
+                            <li>Hola mundo</li>
+                        </ol>
+                    </code>
+                    <p>Deberías ver la cadena de texto "Hola mundo" en la consola. Cambia el texto por cualquier otro y vuelve a ejecutar el archivo.
+                    </p>
+                    <p><strong>¡Felicitaciones, has creado tu primer programa en Ruby!</strong></p>
+            </section>            
+            <section id="tipos_y_operadores" class="main-section">
+                <header>Tipos y operadores</header>
+                    <p>En este capítulo vamos a hablar sobre cadenas de texto, números y booleanos (verdadero o falso), que son algunos de los tipos de datos en Ruby, y cómo realizar operaciones básicas con ellos.</p>
+                    <h3>Cadenas de texto</h3>
+                    <p>Una cadena de texto es un conjunto de caracteres encerrados entre comillas simples (') o dobles ("). Por ejemplo:</p>
+                    <code>
+                        <ol>
+                            <li>"Texto entre comillas dobles"</li> 
+                            <li>'Texto entre comillas simples'</li> 
+                        </ol>
+                    </code>
+                    <hr>
+                    <h3>Numeros</h3>
+                    <p>Los números en Ruby funcionan muy similar a como funcionan en otros lenguajes de programación y puedes realizar las operaciones normales sobre ellos como sumas, restas, etc. Por ejemplo:</p>
+                    <code>
+                        <ol>
+                            <li>puts 1 + 2</li>
+                            <li>puts 3 + 4 + 5</li>
+                            <li>puts 8 / 2</li>
+                        </ol>
+                    </code>
+                    <hr>
+                    <h3>Expresiones booleanas</h3>
+                    <p>En Ruby se utilizan las expresiones <code>true</code> y <code>false</code> para representar verdadero y falso respectivamente.</p>
+                    <p>Los operadores lógicos <code><, >, <=, >=, ==, !=</code> se utilizan para crear expresiones que evalúan a un valor booleano <code>true o false</code>.</p>
+                    <code>
+                        <ol>
+                           <li>$ irb</li> 
+                           <li>> 5 > 3</li> 
+                           <li>=> true</li> 
+                           <li>> 5 >= 3</li> 
+                           <li>=> true</li> 
+                           <li>> 4 < 4</li> 
+                           <li>=> false</li> 
+                           <li>> 4 <= 4</li> 
+                           <li>=> true</li> 
+                           <li>> 2 == 2</li> 
+                           <li>=> true</li> 
+                           <li>> 2 != 2</li> 
+                           <li>=> false</li> 
+                           <li>> "ruby" == "javascript"</li> 
+                           <li>=> false</li> 
+                           <li>> "ruby" != "javascript"</li> 
+                           <li>=> true</li> 
+                        </ol>
+                    </code>
+            </section>
+    
+            <section id="Variables" class="main-section">
+                <header>Variables</header>
+                    <p>Las variables nos permiten almacenar información temporal que podemos usar más adelante en nuestros programas.
+                    </p>
+                    <p>
+                        Crea un archivo llamado <code>variables.rb</code> y agrega lo siguiente:
+                    </p>
+                    <code>
+                        <ol>
+                            <li>name = "Germán" # cámbialo por tu nombre</li>
+                            <li>puts "Hola #{name}"</li>
+                        </ol>
+                    </code>
+                    <p>Ejecúta el archivo y verifica que el resultado sea el correcto:</p>
+                    <code>
+                        <ol>
+                            <li>$ ruby variables.rb</li>
+                            <li>Hola German</li>
+                        </ol>
+                    </code>
+                    <p>En este ejemplo estamos definiendo una variable con nombre <code>name</code> y le asignamos el valor <code>"Germán"</code> (o el valor que le hayas asignado). En la siguiente línea estamos utilizando interpolación para mostrar la cadena de texto <code>"Hola"</code> seguido del valor que tenga en ese momento la variable <code>name</code>.</p>
+                    <p>El nombre de una variable debe comenzar con <code>$</code>, <code>_</code> o una letra, y después puede contener letras, dígitos, <code>_</code> y <code>$</code>. Ejemplos de nombres válidos de variables incluyen name, <code>$element</code>, <code>_trains</code>.</p>
+                    <p>Por otro lado, ejemplos de nombres no válidos incluyen <code>443german</code>, porque no puede empezar con un número, y <code>element&123</code>, porque el caracter <code>&</code> no es válido en el nombre.</p>
+                    <p>Las <a href="http://www.studytonight.com/ruby/reserved-keywords-in-ruby">palabras reservadas de Ruby</a> no se pueden usar como nombres de variables</p>
+                    <p>Como buena práctica se recomienda empezar las variables con una letra en minúscula y, si el nombre se compone de varias palabras, separarlas con raya al piso (_). Por ejemplo <code>video_transcoder</code> o <code>first_name</code>.</p>
+                    
+            </section>
+    
+            <section id="condicionales" class="main-section">
+                <header>Condicionales</header>
+                    <p>Los condicionales le permiten a nuestros programas tomar decisiones cuando se están ejecutando.</p>
+                    <p>Ruby ofrece varias formas para crear condicionales. La sintaxis más simple es la siguiente:</p>
+                    <code>
+                        <ol>
+                            <li>if condicion</li>
+                            <li> # código que se ejecuta si se cumple la condición</li>
+                            <li>end</li>
+                        </ol>                
+                    </code>
+                    <p>La condicion debe ser algo que evalúe a <code>true</code> o <code>false</code>. Por ejemplo, el siguiente código siempre va a imprimir <code>"Hola Mundo"</code>:</p>
+                    <code>
+                        <ol>
+                            <li>if true</li> 
+                            <li>puts "Hola Mundo"</li>
+                            <li>end</li>
+                        </ol>
+                    </code>
+                    <p>El siguiente código nunca va a imprimir <code>"Hola Mundo"</code>:</p>
+                    <code>
+                        <ol>
+                            <li>if false</li> 
+                            <li>puts "Hola Mundo"</li>
+                            <li>end</li>
+                        </ol>
+                    </code>
+                    <p>El siguiente código sólo va a imprimir <code>"Hola Mundo"</code> si el usuario ingresa "Make it Real" (tienen que ser exacto):</p>
+                    <code>
+                        <ol>
+                            <li>text = gets.chomp</li>
+                            <li></li>
+                            <li>if text == "Make It Real"</li>
+                            <li>puts "Hola Mundo"</li>
+                            <li>end</li>
+                        </ol>
+                    </code>
+                    <h3>Else (de lo contrario)</h3>
+                    <code>
+                        <ol>
+                            <li>if condicion</li>
+                            <li># código que se ejecuta si se cumple la condición</li>
+                            <li>else</li>
+                            <li>  # código que se ejecuta si no se cumple la condición</li>
+                            <li>end</li>
+                        </ol>
+                    </code>
+                    <h3>Condiciones compuestas</h3>
+                    <p>Imagina que queremos escribir un programa que imprima "El número está entre 10 y 20" si el valor de una variable está efectivamente entre 10 y 20. ¿Cómo te imaginas que lo podríamos solucionar?</p>
+                    <p>Una opción es usar condiciones anidadas, de esta forma:</p>
+                    <code>
+                        <ol>
+                            <li>num = 15</li>
+                            <li></li>
+                            <li>if num >= 10</li>
+                            <li>  if num <= 2</li>
+                            <li>    puts "El número está entre 10 y 20"</li>
+                            <li>  end</li>
+                            <li>end</li>
+                        </ol>
+                    </code>
+
+
+
+            </section>            
+            <section id="ciclos" class="main-section">
+                <header>Ciclos</header>
+                    <p>Los ciclos nos permiten repetir la ejecución de un código varias veces.</p>
+                    <p>En Ruby existen varias formas de hacer ciclos. Veamos algunas:</p>
+                    <h3>while</h3>
+                    <code>
+                        <ol>
+                            <li>while <condición></li>
+                            <li>  # acá va el código que se va a repetir mientras la condición sea verdadera</li>
+                            <li>end</li>
+                        </ol>
+                    </code>
+                    <h3>times (iterando N veces)</h3>
+                    <code>
+                        <ol>
+                            <li>850.times do |i|</li>
+                            <li>  # código que se quiere ejecutar 850 veces.</li>
+                            <li>end</li>
+                        </ol>
+                    </code>
+                    <p>Existe una sintaxis equivalente que nos permite ejecutar lo mismo en una sola línea:</p>
+                    <code>
+                        <ol>
+                            <li>850.times { |i| puts "Hola #{i}" }</li>
+                        </ol>
+                    </code>
+                    <h3>each</h3>
+                    <code>
+                        <ol>
+                            <li>(10..15).each do |i|</li>
+                            <li>  puts "#{i} Hola mundo"</li>
+                            <li>end</li>
+                        </ol>
+                    </code>
+                    <p>La forma de crear un rango es con dos o tres puntos seguidos (<code>..</code> o <code>...</code>) entre dos números. La diferencia es que los dos puntos (<code>..</code>) incluyen el último valor, los tres puntos (<code>...</code>) lo excluyen.</p>
+            </section>            
+            <section id="arreglos" class="main-section">
+                <header>Arreglos</header>
+                    <p>Hasta ahora hemos trabajado con cadenas de texto, números y booleanos. En este capítulo vamos a hablar de un nuevo tipo de datos: los arreglos.</p>
+                    <p>Un arreglo es una lista ordenada de elementos de cualquier tipo. Para crear tu primer arreglo abre IRB y escribe lo siguiente:</p>
+                    <code>
+                        <ol>
+                            <li>array = [1, "Pedro", true, false, "Juan"]</li>
+                        </ol>
+                    </code>
+                    <p>La sintaxis de un arreglo es muy simple. Los elementos del arreglo se envuelven entre corchetes y se separan con coma. Fíjate que el arreglo que creamos contiene números, cadenas de texto y booleanos. Cada elemento del arreglo puede ser de cualquier tipo (incluso otros arreglos!).</p>
+                    <h3>Obteniendo elementos del arreglo</h3>
+                    <p>Para obtener la primera posición del arreglo que acabamos de crear utilizas <code>array[0]</code> :</p>
+                    <code>
+                        <ol>
+                            <li>$ irb</li>
+                            <li>> array = [1, "Pedro", true, false, "Juan"]</li>
+                            <li> => [1, "Pedro", true, false, "Juan"]</li>
+                            <li>> array[0]</li>
+                            <li> => 1</li>
+                        </ol>
+                    </code>
+                    <p>La sintaxis para obtener un elemento del arreglo es <code>[n]</code> donde <code>n</code> es la posición empezando en 0. Imprime los demás elementos del arreglo:</p>
+                    <code>
+                        <ol>
+                            <li>> array[1]</li>
+                           <li>=> "Pedro"</li>
+                           <li>> array[2]</li>
+                           <li>=> true</li>
+                           <li>> array[3]</li>
+                           <li>=> false</li>
+                           <li>> array[4]</li>
+                           <li>=> "Juan"</li>
+                        </ol>
+                    </code>
+                    <h3>Recorriendo un arreglo</h3>
+                    <p>En el ejemplo anterior pudimos imprimir cada una de las posiciones porque era un arreglo de pocos elementos. Sin embargo esto no siempre es práctico. Primero, el arreglo puede ser muy grande o puede que no sepamos el tamaño del arreglo de antemano. Crea un archivo llamado arrays.rb y escribe el siguiente código:</p>
+                    <code>
+                        <ol>
+                            <li>array = [1, "Pedro", true, false, "Juan"]</li> 
+                            <li></li>
+                            <li>array.each do |element|</li> 
+                            <li>puts element</li> 
+                            <li>end</li> 
+                        </ol>
+                    </code>
+                    <p>El resultado debe ser el siguiente:</p>
+                    <code>
+                        <ol>
+                            <li>$ ruby arrays.rb</li>
+                            <li>1</li>
+                            <li>Pedro</li>
+                            <li>true</li>
+                            <li>false</li>
+                            <li>Juan</li>
+                        </ol>
+                    </code>
+                    <p>Si necesitamos el índice de cada elemento podemos utilizar el método <code>each_with_index</code> en vez de <code>each</code>:</p>
+                    <code>
+                        <ol>
+                            <li>array = [1, "Pedro", true, false, "Juan"]</li>
+                            <li></li>
+                            <li>array.each_with_index do |element, index|</li>
+                            <li>  puts "#{index}: #{element}"</li>
+                            <li>end</li>
+                        </ol>
+                    </code>
+                    <p>El resultado cuando lo ejecutamos debe ser el siguiente:</p>
+                    <code>
+                        <ol>
+                            <li>$ ruby arrays.rb</li>
+                            <li>0: 1</li>
+                            <li>1: Pedro</li>
+                            <li>2: true</li>
+                            <li>3: false</li>
+                            <li>4: Juan</li>
+                        </ol>
+                    </code>
+                
+            </section>            
+            <section id="Mas_cadenas_de_texto" class="main-section">
+                <header>Mas cadenas de texto</header>
+                    <p>Las cadenas de texto (strings) son uno de los tipos de datos más importantes en la programación. En muchas formas se comportan similar a los arreglos (piensa en una cadena de texto como un arreglo de caracteres), y a veces es útil convertir de cadenas de texto a arreglos y viceversa. En este capítulo veremos todas las cosas interesantes que podemos hacer con cadenas de texto.</p>
+                    <p>Empecemos creando un archivo llamado <code>strings.rb</code> y veamos primero como obtener la longitud de la cadena:</p>
+                    <code>
+                        <ol>
+                            <li>str = "Hola mundo"</li>
+                            <li>puts str.length</li>
+                        </ol>
+                    </code>
+                    <p>Si ejecutas ese programa deberías ver que la longitud de la cadena es 10:</p>
+                    <code>
+                        <ol>
+                            <li>$ ruby strings.rb</li>
+                            <li>10</li>
+                        </ol>
+                    </code>
+                    <p>Fíjate que el espacio también hace parte de la longitud.</p>
+                    <h3>Recorrer cadenas</h3>
+                    <p>Puedes obtener los caracteres de una posición específica igual que con los arreglos. Por ejemplo, modifica el archivo para mostrar los primeros 4 caracteres:</p>
+                    <code>
+                        <ol>
+                            <li>str = "Hola mundo"</li>
+                            <li></li>
+                            <li>puts str[0]</li>
+                            <li>puts str[1]</li>
+                            <li>puts str[2]</li>
+                            <li>puts str[3]</li>
+                        </ol>
+                    </code>
+                    <p>Si ejecutas ese programa deberías ver algo similar a esto:</p>
+                    <code>
+                        <ol>
+                            <li>$ ruby strings.rb</li>
+                            <li>H</li>
+                            <li>o</li>
+                            <li>l</li>
+                            <li>a</li>
+                        </ol>
+                    </code>
+                    <p>Para recorrer cada uno de los caracteres de una cadena puedes hacer lo siguiente:</p>
+                    <code>
+                        <ol>
+                            <li>str = "Hola mundo"</li>
+                            <li></li>
+                            <li>chars = str.chars # ["H", "o", "l", "a", " ", "m", "u", "n", "d", "o"]</li>
+                            <li>chars.each do |c|</li>
+                            <li>  puts c</li>
+                            <li>end</li>
+                        </ol>
+                    </code>
+                    <p>El método <code>chars</code> retorna un arreglo con todos los caracteres de la cadena, y después iteramos sobre ese arreglo normalmente. Fíjate que el espacio en blanco también cuenta como un caracter.</p>
+                    <h3>Partiendo cadenas</h3>
+                    <p>No siempre queremos crear un arreglo a partir de sus caracteres. En ocasiones es útil dividir una cadena por otro caracter como espacio o coma. Para eso podemos utilizar el método split. Abre IRB y ejecuta lo siguiente:</p>
+                    <code>
+                        <ol>
+                            <li>$ irb</li>
+                            <li>2.3.1 :001 > "Hola mundo".split(" ")</li>
+                            <li> => ["Hola", "mundo"]</li>
+                        </ol>
+                    </code>
+                    <p>El método <code>split</code> recibe el caracter por el que quieres partir la cadena. Por ejemplo, podemos partir una cadena por comas:</p>
+                    <code>
+                        <ol>
+                            <li>$ irb</li>
+                            <li>2.3.1 :001 > "prueba,separar,cadenas".split(",")</li>
+                            <li> => ["prueba", "separar", "cadenas"]</li>
+                        </ol>
+                    </code>
+                    <p>Si quieres unir un arreglo en una cadena puedes utilizar el método <code>join</code>:</p>
+                    <code>
+                        <ol>
+                            <li>$ irb</li>
+                            <li>2.3.1 :001 > ["Hola", "mundo"].join(" ")</li>
+                            <li> => "Hola mundo"</li>
+                        </ol>
+                    </code>
+                    <p>El método <code>join</code> recibe un argumento que es el caracter que se va a utilizar para separar los elementos. Por ejemplo, podemos unir un arreglo con guiones:</p>
+                    <code>
+                        <ol>
+                            <li>$ irb</li>
+                            <li>2.3.1 :001 > ["Hola", "mundo"].join("-")</li>
+                            <li> => "Hola-mundo"</li>
+                        </ol>
+                    </code>
+
+
+                
+            </section>            
+            <section id="hashes" class="main-section">
+                <header>Hashes</header>
+                    <p>El último tipo de datos que vamos a ver son los hashes (no existe una buena traducción al español). Un hash no es más que una colección de datos en donde cada valor está asociado a una llave. Imagina un diccionario, en donde las palabras son las llaves y las definiciones son los valores.</p>
+                    <p>Abramos IRB y creemos nuestro primer hash:</p>
+                    <code>
+                        <ol>
+                            <li>$ irb</li>
+                            <li>2.3.1 :001 > persona = {"nombre" => "Germán", "apellido" => "Escobar", "edad" => 34, "estatura" => 1.8}</li>
+                            <li> => {"nombre"=>"Germán", "apellido"=>"Escobar", "edad"=>34, "estatura"=>1.8}</li>
+                        </ol>
+                    </code>
+                    <p>En este ejemplo estamos creando un hash y almacenándolo en la variable <code>persona</code>. Un hash se define utilizando corchetes (<code>{}</code>). Los elementos se separan con coma (<code>,</code>) y las llaves se separan de los valores con <strong>hash rocket</strong> (<code>=></code>).</p>
+                    <p>En este hash estamos almacenando la información de una persona, pero en un hash podemos almacenar cualquier tipo de información que requiera esa asociación <code>llave-valor</code>.</p>
+                    <h3>Obteniendo valores de un Hash</h3>
+                    <p>Para obtener el nombre de la persona en el hash que definimos previamente utilizamos la siguiente línea de código:</p>
+                    <code>
+                        <ol>
+                            <li>2.3.1 :002 > persona["nombre"]</li>
+                            <li> => "Germán"</li>
+                        </ol>
+                    </code>
+                    <p>Para obtener el valor de una llave en un hash utilizamos una notación muy similar a como lo hacemos con los arreglos, utilizando <code>[]</code>. Sin embargo, en vez de utilizar la posición como en los arreglos, utilizamos la llave. Las llaves pueden ser de cualquier tipo. En el ejemplo anterior utilizamos strings pero también podrían ser números:</p>
+                    <code>
+                        <ol>
+                            <li>2.3.1 :003 > statuses = {0 => "encendido", 1 => "apagado", 2 => "fundido"}</li>
+                            <li>=> {0 => "encendido", 1 => "apagado", 2 => "fundido"}</li>
+                        </ol>
+                    </code>                    
+                    <p>Y para obtener el valor de la llave 1 hacemos lo siguiente:</p>
+                    <code>
+                        <ol>
+                            <li>2.3.1 :004 > statuses[1]</li>
+                            <li> => "apagado"</li>
+                        </ol>
+                    </code>
+                    <h3>Agregando nuevos elem al Hash</h3>
+                    <p>Podemos agregar más elementos al hash. Por ejemplo, si quisiéramos agregar una llave <code>peso</code> en el hash que definimos anteriormente, lo haríamos de la siguiente forma:</p>
+                    <code>
+                        <ol>
+                            <li>2.3.1 :005 > persona["peso"] = 65</li>
+                            <li> => 65</li>
+                        </ol>
+                    </code>
+                    <p>Si volvemos a mostrar el contenido de la variable persona veríamos el siguiente resultado (fíjate que ahora tiene una nueva llave <code>"peso"</code> con valor <code>65</code> ):</p>
+                    <code>
+                        <ol>
+                            <li>2.3.1 :006 > persona</li>
+                            <li> => {"nombre"=>"Germán", "apellido"=>"Escobar", "edad"=>34, "estatura"=>1.8, "peso"=>65}</li>
+                        </ol>
+                    </code>
+                    <h3>Modificando elementos del Hash</h3>
+                    <p>Es posible modificar los elementos de un hash. Por ejemplo, si queremos cambiar el valor de la llave peso podríamos hacer lo siguiente:</p>
+                    <code>
+                        <ol>
+                            <li>2.3.1 :007 > persona["peso"] = 70</li>
+                            <li>  => 70</li>
+                        </ol>
+                    </code>
+                    <p>Ahora, si volvemos a mostrar el contenido de la variable persona veríamos el siguiente resultado (fíjate que ahora la llave <code>"peso"</code> tiene un valor de <code>70</code> ):</p>
+                    <code>
+                        <ol>
+                            <li>2.3.1 :008 > persona</li>
+                            <li>  => {"nombre"=>"Germán", "apellido"=>"Escobar", "edad"=>34, "estatura"=>1.8, "peso"=>70}</li>
+                        </ol>
+                    </code>
+                    <h3>Eliminando elementos del Hash</h3>
+                    <p>Para eliminar una llave (con su respectivo valor) del hash podemos utilizar el método <code>delete</code>. Por ejemplo, si queremos eliminar la llave <code>"peso"</code> podemos hacer lo siguiente:</p>
+                    <code>
+                        <ol>
+                            <li>2.3.1 :009 > persona.delete("peso")</li>
+                            <li> => 70</li>
+                        </ol>
+                    </code>
+                    <p>El método <code>delete</code> devuelve el valor de la llave eliminada. Ahora, si volvemos a mostrar el contenido de la variabl <code>person</code> veríamos el siguiente resultado (fíjate que no está la llave <code>"peso"</code> ):</p>
+                    <code>
+                        <ol>
+                            <li>2.3.1 :010 > persona</li>
+                            <li> => {"nombre"=>"Germán", "apellido"=>"Escobar", "edad"=>34, "estatura"=>1.8}</li>
+                        </ol>
+                    </code>
+                    <h3>Recorriendo los elementos de un hash</h3>
+                    <p>Hay varias formas de recorrer los elementos de un <code>hash</code>. Primero, podemos utilizar el método <code>each</code> de la siguiente forma. Crea un archivo llamado <code>hashes.rb</code> con el siguiente código:</p>
+                    <code>
+                        <ol>
+                            <li>persona = { "nombre" => "Germán", "apellido" => "Escobar", "edad" => 34, "estatura" => 1.8 }</li>
+                            <li></li>
+                            <li>persona.each do |llave, valor|</li>
+                            <li>  puts "#{llave}: #{valor}"</li>
+                            <li>end</li>
+                        </ol>
+                    </code>
+                    <p>Al ejecutarlo deberías ver el siguiente resultado:</p>
+                    <code>
+                        <ol>
+                            <li>$ ruby hashes.rb</li>
+                            <li>nombre: Germán</li>
+                            <li>apellido: Escobar</li>
+                            <li>edad: 34</li>
+                            <li>estatura: 1.8</li>
+                        </ol>
+                    </code>
+                    <hr>
+            </section>            
+            <section id="metodos" class="main-section">
+                <header>Metodos</header>
+                    <p>Los métodos, conocidos también como funciones o procedimientos en otros lenguajes, nos permiten reutilizar código.</p>
+                    <p>La sintaxis para crear un método en Ruby es la siguiente:</p>
+                    <code>
+                        <ul>
+                            <li>def hello</li>
+                            <li>  puts "Hola mundo"</li>
+                            <li>end</li>
+                        </ul>
+                    </code>
+                    <p>Para definir un método usamos la palabra reservada <code>def</code> y le damos un nombre (en este caso <code>hello</code> ). Al final debemos cerrar el método con <code>end</code>.</p>
+                    <p>Para invocar un método, utilizas el nombre del método y, opcionalmente, abres y cierras paréntesis al final:</p>
+                    <code>
+                        <ul>
+                            <li>hello() # los paréntesis son opcionales</li>
+                        </ul>
+                    </code>
+                    <h3>Parametros
+                    </h3>
+                    <p>Los métodos pueden recibir cero o más parámetros (o argumentos). Modifiquemos nuestro programa para que salude a cualquier persona:</p>
+                    <code>
+                        <ol>
+                            <li>def hello(name)</li>
+                            <li>  puts "Hola #{name}"</li>
+                            <li>end</li>
+                            <li></li>
+                            <li>hello("Germán")</li>
+                            <li>hello("David")</li>
+                        </ol>
+                    </code>
+                    <h3>Retornando un valor</h3>
+                    <p>En Ruby todas las expresiones retornan un valor. Incluso puts <code>"Hola mundo"</code> retorna un valor, solo que el valor es <code>nil</code> .</p>
+                    <p>Por defecto, todos los métodos retornan el resultado de la última línea que se ejecute en el método. Vamos a modificar nuestro ejemplo para que en vez de imprimir el saludo, lo retorne:</p>
+                    <code>
+                        <ol>
+                            <li>def hello(name)</li>
+                            <li>  "Hola #{name}"</li>
+                            <li>end</li>
+                            <li></li>
+                            <li>hello("Germán")</li>
+                            <li>puts hello "David"  # los paréntesis son opcionales</li>
+                        </ol>
+                    </code>
+                    <p>También es posible retornar el valor explícitamente con la palabra reservada return:</p>
+                    <code>
+                        <ol>
+                            <li>def hello(name)</li>
+                            <li>  return "Hola #{name}"</li>
+                            <li>end</li>
+                            <li></li>
+                            <li>hello("Germán")</li>
+                            <li>puts hello "David"</li>
+                        </ol>
+                    </code>
+                
+            </section>
+    
+        </main>
+
+
+</body>
+</html>

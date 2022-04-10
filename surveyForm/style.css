@@ -1,0 +1,77 @@
+body {
+    background-color: rgb(199, 228, 243);
+    text-align: center;
+    padding-top: 5%;
+    padding-right: 20%;
+    padding-left: 20%;
+}
+
+#form-container {
+    background-color: rgb(247, 243, 139);
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+}
+
+header {
+    border-bottom: solid black 1px;
+}
+
+header h1 {
+    text-align: center;
+}
+
+header p {
+    font-size: small;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: left;
+    padding: 5px 5px 5px 5px;
+    
+}
+
+input {
+    border-radius: 5px;
+    border: solid gray 1px;
+}
+
+#Recommend p {
+    text-align: center;
+}
+
+#favorite-feature label {
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#What-improve p {
+    text-align: center;
+}
+
+#Suggestion {
+    text-align: center;
+}
+
+button {
+    background-color: lightskyblue;
+    border: solid gray 1px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+select {
+    background-color: white;
+    border-radius: 5px;
+    border: solid gray 1px;
+    
+}
+
+textarea {
+    border-radius: 5px;
+    border: solid gray 1px;
+}

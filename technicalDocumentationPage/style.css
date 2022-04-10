@@ -1,0 +1,115 @@
+#navbar {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 0;
+    margin-left: 0;
+    position: fixed;
+    height: 100px;
+}
+
+#main-doc {
+    position: absolute;
+    margin-left: 310px;
+}
+
+#header-navbar {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 10px;
+}
+
+@media (max-width: 900px) {
+    #navbar {
+        width: 100%;
+        max-width: 900px;
+        align-items: center;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        background-color: white;
+        z-index: 1;
+    }
+    #header-navbar{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+    }
+    #header-navbar a{
+        width: 200px;
+        height: 30px;
+        border-radius: 5px;
+        text-align: center;
+    }
+    #main-doc {
+        margin: 0;
+        position: relative;
+        margin-top: 320px;
+    }
+}
+
+@media (max-width: 660px) {
+    #navbar {
+        width: 100%;
+        max-width: 660px;
+        align-items: center;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        background-color: white;
+        z-index: 1;
+    }
+    #header-navbar{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+    }
+    #header-navbar a{
+        width: 120px;
+        height: 40px;
+        border-radius: 5px;
+        text-align: center;
+        font-size: small;
+        justify-self: center;
+    }
+    #main-doc {
+        margin: 0;
+        position: relative;
+        margin-top: 400px;
+    }
+}
+
+#navbar p {
+    text-align: center;
+    border-bottom: solid black 1px;
+    padding-bottom: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+#header-navbar a {
+    text-decoration: none;
+    border: solid black 1px;
+    padding: 10px;
+    background-color: rgb(231, 247, 247);
+}
+
+
+main header {
+    text-align: center;
+    border-bottom: solid black 1px;
+    border-top: solid black 1px;
+    padding-bottom: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+
